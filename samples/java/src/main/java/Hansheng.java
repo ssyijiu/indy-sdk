@@ -62,7 +62,7 @@ public class Hansheng {
         // 3. Create Steward DID
         // 创建管理员 DID
         console.log("@Steward -> Create DID");
-        String stewardSeed = "000000000000000000000000Steward1";
+        String stewardSeed = "19e2ea3730c3d62f36a095a44d343c7f5d81e0168c7f987b3d70a37c516bb45d";
         DidJSONParameters.CreateAndStoreMyDidJSONParameter stewardDidJson =
             new DidJSONParameters.CreateAndStoreMyDidJSONParameter(null, stewardSeed, null, null);
         DidResults.CreateAndStoreMyDidResult stewardDidResult = Did.createAndStoreMyDid(
@@ -73,7 +73,7 @@ public class Hansheng {
         console.log("stewardVerKey:" + stewardVerKey);
 
         console.log("\n=============================================");
-        console.log("=== Daniel Setup ===\n");
+        console.log("=== Daniel Serm tup ===\n");
 
         // 4. Create Daniel Wallet
         // 创建员工的钱包

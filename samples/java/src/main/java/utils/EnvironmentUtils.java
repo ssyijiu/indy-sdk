@@ -6,6 +6,7 @@ public class EnvironmentUtils {
 	static String getTestPoolIP() {
 		String testPoolIp = System.getenv("TEST_POOL_IP");
 		return testPoolIp != null ? testPoolIp : "116.196.114.151";
+		// return testPoolIp != null ? testPoolIp : "127.0.0.1";
 	}
 
 	public static String getIndyHomePath() {
