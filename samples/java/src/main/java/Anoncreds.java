@@ -7,13 +7,18 @@ import org.json.JSONObject;
 import utils.PoolUtils;
 
 import static org.hyperledger.indy.sdk.anoncreds.Anoncreds.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static utils.PoolUtils.PROTOCOL_VERSION;
 
 
 class Anoncreds {
 
-	static void demo() throws Exception {
+	public static void main(String[] args) throws Exception {
+		demo();
+	}
+	private static void demo() throws Exception {
 		System.out.println("Anoncreds sample -> started");
 
 		String issuerDid = "NcYxiDXkpYi6ov5FcYDi1e";
@@ -85,20 +90,21 @@ class Anoncreds {
 
 		//11. Prover Gets Credentials for Proof Request
 		String proofRequestJson = new JSONObject("{" +
-				"                    \"nonce\":\"123432421212\",\n" +
-				"                    \"name\":\"proof_req_1\",\n" +
-				"                    \"version\":\"0.1\", " +
-				"                    \"requested_attributes\": {" +
-				"                          \"attr1_referent\":{\"name\":\"name\"}," +
-				"                          \"attr2_referent\":{\"name\":\"sex\"}," +
-				"                          \"attr3_referent\":{\"name\":\"phone\"}" +
-				"                     }," +
-				"                    \"requested_predicates\":{" +
-				"                         \"predicate1_referent\":{\"name\":\"age\",\"p_type\":\">=\",\"p_value\":18}" +
-				"                    }" +
-				"                  }").toString();
+			"                    \"nonce\":\"123432421212\",\n" +
+			"                    \"name\":\"proof_req_1\",\n" +
+			"                    \"version\":\"0.1\", " +
+			"                    \"requested_attributes\": {" +
+			"                          \"attr1_referent\":{\"name\":\"name\"}," +
+			"                          \"attr2_referent\":{\"name\":\"sex\"}," +
+			"                          \"attr3_referent\":{\"name\":\"phone\"}" +
+			"                     }," +
+			"                    \"requested_predicates\":{" +
+			"                         \"predicate1_referent\":{\"name\":\"age\",\"p_type\":\">=\",\"p_value\":18}" +
+			"                    }" +
+			"                  }").toString();
 
 		CredentialsSearchForProofReq credentialsSearch = CredentialsSearchForProofReq.open(proverWallet, proofRequestJson, null).get();
+
 
 		JSONArray credentialsForAttribute1 = new JSONArray(credentialsSearch.fetchNextCredentials("attr1_referent", 100).get());
 		String credentialIdForAttribute1 = credentialsForAttribute1.getJSONObject(0).getJSONObject("cred_info").getString("referent");
@@ -107,6 +113,8 @@ class Anoncreds {
 		String credentialIdForAttribute2 = credentialsForAttribute2.getJSONObject(0).getJSONObject("cred_info").getString("referent");
 
 		JSONArray credentialsForAttribute3 = new JSONArray(credentialsSearch.fetchNextCredentials("attr3_referent", 100).get());
+		// String credentialIdForAttribute3 = credentialsForAttribute3.getJSONObject(0).getJSONObject("cred_info").getString("referent");
+		// System.out.println(credentialIdForAttribute3);
 		assertEquals(0, credentialsForAttribute3.length());
 
 		JSONArray credentialsForPredicate = new JSONArray(credentialsSearch.fetchNextCredentials("predicate1_referent", 100).get());
@@ -124,8 +132,11 @@ class Anoncreds {
 				"                                        }", selfAttestedValue, credentialIdForAttribute1, credentialIdForAttribute2, credentialIdForPredicate)).toString();
 
 		String schemas = new JSONObject(String.format("{\"%s\":%s}", schemaId, schemaJson)).toString();
+		System.out.println("schemas: " + schemas);
 		String credentialDefs = new JSONObject(String.format("{\"%s\":%s}", credDefId, credDefJson)).toString();
+		System.out.println("credentialDefs: " + credentialDefs);
 		String revocStates = new JSONObject("{}").toString();
+		System.out.println("revocStates: " + revocStates);
 
 		String proofJson = proverCreateProof(proverWallet, proofRequestJson, requestedCredentialsJson,
 				masterSecretId, schemas, credentialDefs, revocStates).get();
