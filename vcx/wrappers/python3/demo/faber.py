@@ -12,7 +12,7 @@ from vcx.api.schema import Schema
 from vcx.api.credential_def import CredentialDef
 from vcx.state import State, ProofState
 from vcx.api.utils import vcx_agent_provision
-import vcx.api.logging as logging
+#import vcx.api.logging as logging
 from ctypes import cdll
 
 # 'agency_url': URL of the agency
@@ -37,7 +37,7 @@ async def main():
     payment_plugin = cdll.LoadLibrary("../../../../libnullpay/target/debug/libnullpay.dylib")
     payment_plugin.nullpay_init()
 
-    logging.default_logger()
+    #logging.default_logger()
     print("#1 Provision an agent and wallet, get back configuration details")
     config = await vcx_agent_provision(json.dumps(provisionConfig))
     config = json.loads(config)

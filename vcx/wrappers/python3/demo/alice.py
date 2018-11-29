@@ -11,7 +11,7 @@ from vcx.api.utils import vcx_agent_provision
 from vcx.state import State
 from time import sleep
 from ctypes import cdll
-import vcx.api.logging as logging
+#import vcx.api.logging as logging
 
 provisionConfig = {
   'agency_url':'http://localhost:8080',
@@ -28,7 +28,7 @@ async def main():
 
     payment_plugin = cdll.LoadLibrary("../../../../libnullpay/target/debug/libnullpay.dylib")
     payment_plugin.nullpay_init()
-    logging.default_logger()
+    #logging.default_logger()
 
     print("#7 Provision an agent and wallet, get back configuration details")
     config = await vcx_agent_provision(json.dumps(provisionConfig))
