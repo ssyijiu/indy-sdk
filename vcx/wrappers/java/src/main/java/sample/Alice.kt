@@ -67,6 +67,8 @@ suspend fun main(args: Array<String>) {
     println("#23 Create a Disclosed proof object from proof request")
     // val proof = await { DisclosedProofApi.proofCreate() }
 
+    println("#24 Query for credentials in the wallet that satisfy the proof request")
+
 }
 
 suspend fun <T> await(timeMillis: Long = 0, await: () -> T): T {
