@@ -28,11 +28,12 @@ async def main():
 
     payment_plugin = cdll.LoadLibrary("../../../../libnullpay/target/debug/libnullpay.dylib")
     payment_plugin.nullpay_init()
-    #logging.default_logger()
+    # logging.default_logger()
 
     print("#7 Provision an agent and wallet, get back configuration details")
     config = await vcx_agent_provision(json.dumps(provisionConfig))
     config = json.loads(config)
+    print('vcx_agent_provision config: ', config)
     # Set some additional configuration options specific to alice
     config['institution_name'] = 'alice'
     config['institution_logo_url'] = 'http://robohash.org/456'
@@ -55,6 +56,7 @@ async def main():
     print("#11 Wait for faber.py to issue a credential offer")
     sleep(10)
     offers = await Credential.get_offers(connection_to_faber)
+    # print('offers: ', offers)
 
     # Create a credential object from the credential offer
     credential = await Credential.create('credential', offers[0])
