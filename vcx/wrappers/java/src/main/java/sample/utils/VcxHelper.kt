@@ -1,8 +1,4 @@
-package utils
-
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import java.util.*
+package sample.utils
 
 /**
  * Created by lxm on 2018/11/30.

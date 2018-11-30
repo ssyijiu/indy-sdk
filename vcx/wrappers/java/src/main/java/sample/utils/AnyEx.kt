@@ -1,4 +1,4 @@
-package utils
+package sample.utils
 
 import com.google.gson.Gson
 import java.lang.reflect.Type

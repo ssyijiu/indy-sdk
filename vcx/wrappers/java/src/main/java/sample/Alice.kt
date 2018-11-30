@@ -7,10 +7,10 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
-import utils.VcxHelper
-import utils.VcxState
-import utils.toJson
-import utils.toObject
+import sample.utils.VcxHelper
+import sample.utils.VcxState
+import sample.utils.toJson
+import sample.utils.toObject
 import java.util.*
 
 

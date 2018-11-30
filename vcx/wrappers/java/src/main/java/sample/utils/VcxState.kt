@@ -1,4 +1,4 @@
-package utils
+package sample.utils
 
 /**
  * Created by lxm on 2018/11/30.
