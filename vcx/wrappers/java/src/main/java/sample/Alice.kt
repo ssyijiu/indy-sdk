@@ -1,16 +1,13 @@
 import com.evernym.sdk.vcx.connection.ConnectionApi
 import com.evernym.sdk.vcx.credential.CredentialApi
 import com.evernym.sdk.vcx.proof.DisclosedProofApi
-import com.evernym.sdk.vcx.proof.ProofApi
 import com.evernym.sdk.vcx.utils.UtilsApi
 import com.evernym.sdk.vcx.vcx.VcxApi
-import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import com.jayway.jsonpath.JsonPath
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
-import net.minidev.json.JSONObject
 import sample.utils.VcxHelper
 import sample.utils.VcxState
 import sample.utils.toJson
