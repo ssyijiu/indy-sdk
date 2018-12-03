@@ -39,7 +39,7 @@ async def main():
     config['institution_logo_url'] = 'http://robohash.org/456'
     config['genesis_path'] = './docker-jd.txn'
     config['pool_name'] = 'gytest'
-    print('config: ', config)
+    print('config: ', json.dumps(config))
     
     print("#8 Initialize libvcx with new configuration")
     await vcx_init_with_config(json.dumps(config))
@@ -81,8 +81,10 @@ async def main():
     credentials = await proof.get_creds()
 
     # Use the first available credentials to satisfy the proof request
+    print('before credentials: ', json.dumps(credentials))
     for attr in credentials['attrs']:
         credentials['attrs'][attr] = credentials['attrs'][attr][0]
+    print('after credentials: ', json.dumps(credentials))
 
     print("#25 Generate the proof")
     await proof.generate_proof(credentials, {})

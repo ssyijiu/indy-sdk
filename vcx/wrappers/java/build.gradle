@@ -69,8 +69,15 @@ dependencies {
     implementation 'net.java.dev.jna:jna:4.5.0'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
     implementation 'net.sourceforge.streamsupport:android-retrofuture:1.6.2'
-    implementation group: 'net.sourceforge.streamsupport', name: 'android-retrostreams', version: '1.6.2'
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    implementation 'org.awaitility:awaitility-scala:3.1.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
     testImplementation group: 'commons-io', name: 'commons-io', version: '2.5'
@@ -78,9 +85,5 @@ dependencies {
     testImplementation 'net.java.dev.jna:jna:4.5.0'
     testImplementation 'org.awaitility:awaitility-scala:3.1.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
-    implementation 'com.google.code.gson:gson:2.8.5'
 }
 

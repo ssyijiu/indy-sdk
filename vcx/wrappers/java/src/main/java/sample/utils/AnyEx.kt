@@ -14,3 +14,5 @@ fun <T> ByteArray.toObject(classOfT: Class<T>) = toUTF8().toObject(classOfT)
 fun <T> String.toObject(classOfT: Class<T>) = gson.fromJson(this, classOfT)!!
 
 fun <T> String.toObject(typeOfT: Type) = gson.fromJson<T>(this, typeOfT)!!
+
+fun String.convertToValidJson() = this.replace("'","\"")

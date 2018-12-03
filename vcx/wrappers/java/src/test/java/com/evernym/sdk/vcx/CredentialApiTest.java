@@ -141,11 +141,13 @@ class CredentialApiTest {
     @DisplayName("get credential offers for a connection")
     void getOffers() throws VcxException, ExecutionException, InterruptedException {
         int connection = TestHelper._createConnection();
-	String payload= "{ 'connection_type': 'SMS', 'phone':'7202200000' }";
+	    String payload= "{ 'connection_type': 'SMS', 'phone':'7202200000' }";
         TestHelper.getResultFromFuture(ConnectionApi.vcxConnectionConnect(connection,TestHelper.convertToValidJson(payload)));
         String offers = TestHelper.getResultFromFuture(CredentialApi.credentialGetOffers(connection));
         assert (offers != null);
         List<String> credentialOffer = JsonPath.read(offers,"$.[0]");
+        System.out.println(offers);
+        System.out.println(credentialOffer);
         assert (!credentialOffer.isEmpty());
         int credential = TestHelper.getResultFromFuture(CredentialApi.credentialCreateWithOffer("0", JsonPath.parse(credentialOffer).jsonString()));
         assertNotSame(0, credential);
