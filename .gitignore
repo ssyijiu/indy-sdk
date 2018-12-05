@@ -40,3 +40,4 @@ hs_err_pid*
 
 /vcx/libvcx/build_scripts/android/openssl/
 vcx/wrappers/java/android/src/main/jniLibs/arm64-v8a/libvcx.so
+vcx/samples/android/WrapperTest/app/src/main/jniLibs/arm64-v8a/libvcx.so
