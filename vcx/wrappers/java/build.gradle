@@ -66,10 +66,10 @@ tasks.withType(Test) {
 
 dependencies {
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
     implementation 'net.java.dev.jna:jna:4.5.0'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
     implementation 'net.sourceforge.streamsupport:android-retrofuture:1.6.2'
-    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
     implementation 'org.awaitility:awaitility-scala:3.1.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'

@@ -22,7 +22,8 @@ if [ "$1" == "aarm64" ]; then
         exit 1
     fi
     
-    export OPENSSL_DIR=/usr/local/Cellar/openssl/1.0.2l
+    # export OPENSSL_DIR=/usr/local/Cellar/openssl/1.0.2l
+    export OPENSSL_DIR=/Users/lxm/Hansheng/indy-android-dependencies-master/src/openssl/prebuilt/openssl_arm64
     export AR=${NDK_TOOLCHAIN_DIR}/arm64/bin/aarch64-linux-android-ar
     export CC=${NDK_TOOLCHAIN_DIR}/arm64/bin/aarch64-linux-android-clang
 
