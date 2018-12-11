@@ -8,7 +8,7 @@ object VcxHelper {
 
     fun provisionConfig() =
         mutableMapOf<String, String>().apply {
-            put(key = "agency_url", value = "http://localhost:8080")
+            put(key = "agency_url", value = "http://116.196.91.197:8080")
             put(key = "agency_did", value = "VsKV7grR1BUE29mG2Fm2kX")
             put(key = "agency_verkey", value = "Hezce2UWMZ3wUhVkh2LfKSs8nDzWwzs2Win7EzNN3YaR")
             put(key = "wallet_key", value = "123")

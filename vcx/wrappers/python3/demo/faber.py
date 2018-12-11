@@ -22,7 +22,7 @@ from ctypes import cdll
 # 'wallet_key': encryption key for encoding wallet
 # 'payment_method': method that will be used for payments
 provisionConfig = {
-  'agency_url':'http://localhost:8080',
+  'agency_url':'http://116.196.91.197:8080',
   'agency_did':'VsKV7grR1BUE29mG2Fm2kX',
   'agency_verkey':'Hezce2UWMZ3wUhVkh2LfKSs8nDzWwzs2Win7EzNN3YaR',
   'wallet_name':'faber_wallet',

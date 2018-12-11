@@ -14,7 +14,7 @@ from ctypes import cdll
 #import vcx.api.logging as logging
 
 provisionConfig = {
-  'agency_url':'http://localhost:8080',
+  'agency_url':'http://116.196.91.197:8080',
   'agency_did':'VsKV7grR1BUE29mG2Fm2kX',
   'agency_verkey':'Hezce2UWMZ3wUhVkh2LfKSs8nDzWwzs2Win7EzNN3YaR',
   'wallet_name':'alice_wallet',
